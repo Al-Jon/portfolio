@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+ 
+    
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">My Portfolio</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="home" class="home">
+        
+        <div class="home-content">
+            <h1>Hello! I'm <span class="aljon">AL JON CAPASGORDO</span></h1>
+            <p>Your Web Developer & UI/UX Designer</p>
+            <a href="#portfolio" class="btn">View Work</a>
+        </div>
+
+        <div class="home-img">
+            <img src="aljon-pic-round.png">
+        </div>
+    </section>
+    
+    
+    
+
+    <section id="portfolio" class="portfolio">
+        <h2>My Work</h2>
+
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide item">
+                    <img src="ap.png" alt="Work 1" class="work-img">
+                    <h3>What's AP!</h3>
+                    <p>An educational mobile audiobook for Araling Panlipunan lessons</p>
+                </div>
+                <div class="swiper-slide item">
+                    <img src="quote.png" alt="Work 2" class="work-img">
+                    <h3>Quote Randomizer</h3>
+                    <p>A simple web application for picking a random quote</p>
+                </div>
+                <div class="swiper-slide item">
+                    <img src="todo.png" alt="Work 3" class="work-img">
+                    <h3>To-do List App</h3>
+                    <p>A simple to-do list app to organize your tasks and get job well done</p>
+                </div>
+
+                <div class="swiper-slide item">
+                    <img src="val.png" alt="Work 3" class="work-img">
+                    <h3>Cute Valentine's Day Card</h3>
+                    <p>A cute valentine's day card to ask the person you adore -- sweet!</p>
+                </div>
+
+                <div class="swiper-slide item">
+                    <img src="ap.png" alt="Work 1" class="work-img">
+                    <h3>What's AP!</h3>
+                    <p>An educational mobile audiobook for Araling Panlipunan lessons</p>
+                </div>
+                <div class="swiper-slide item">
+                    <img src="quote.png" alt="Work 2" class="work-img">
+                    <h3>Quote Randomizer</h3>
+                    <p>A simple web application for picking a random quote</p>
+                </div>
+                <div class="swiper-slide item">
+                    <img src="todo.png" alt="Work 3" class="work-img">
+                    <h3>To-do List App</h3>
+                    <p>A simple to-do list app to organize your tasks and get job well done</p>
+                </div>
+
+                <div class="swiper-slide item">
+                    <img src="val.png" alt="Work 3" class="work-img">
+                    <h3>Cute Valentine's Day Card</h3>
+                    <p>A cute valentine's day card to ask the person you adore -- sweet!</p>
+                </div>
+            </div>
+
+            <!-- Navigation buttons -->
+          <!--  <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>      -->
+        </div>
+    </section>
+
+    
+    <section id="resume" class="resume">
+        <h2>Resume</h2>
+        <div class="resume-container"><img src="AlJon_Resume.jpg"></div>
+        <a href="AlJon_Resume.pdf" download class="btn">Download Resume</a>
+    </section>
+    
+  
+   <!-- <section id="contact" class="contact">
+          <h2>Contact Me</h2>
+        <form action="contact-form-handler.php" method="post">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    -->
+
+    <section class="contact" id="contact">
+        <h2>Contact Me</h2>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=aljoncapasgordo15@gmail.com" target="_blank" class="btn">Email Me</a>
+       <br><br>  <p>Email: aljoncapasgordo15@gmail.com</p>
+        <p  style="margin-left: -87px;">Phone: +63 948 854 6431</p>
+    </section>
+        
+        
+    </section>
+    
+
+    
+
+   
+
+
+
+<!--      ===================================================================                             -->
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script defer src="script.js"></script>
+
+    <script>
+       document.addEventListener("DOMContentLoaded", function () {
+            const swiper = new Swiper(".swiper-container", {
+        loop: true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        slidesPerView: 3, // Automatically fit slides
+        spaceBetween: 20, 
+        centeredSlides: true, // Ensures the center slide is always in the middle
+        initialSlide: 1, // Start with the second slide centered
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+    },
+});
+
+    // Enlarge image on click
+    document.querySelectorAll(".work-img").forEach((img) => {
+        img.addEventListener("click", function () {
+            const fullSizeImg = document.createElement("div");
+            fullSizeImg.innerHTML = `<div class="overlay"><img src="${this.src}" class="full-img"></div>`;
+            document.body.appendChild(fullSizeImg);
+
+            // Remove image on click
+            fullSizeImg.addEventListener("click", () => fullSizeImg.remove());
+        });
+    });
+});
+
+    </script>
+
+
+
+
+
+
+<!--   ==========================================================================   -->
+
+<script>
+    document.querySelectorAll('nav ul li a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+
+
+
+
+</body>
+
+
+
+</html>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const image = document.getElementById("profile-img");
+        const text = document.querySelector(".aljon");
+
+        image.addEventListener("mouseenter", function () {
+            text.classList.add("hover-effect");
+        });
+
+        image.addEventListener("mouseleave", function () {
+            text.classList.remove("hover-effect");
+        });
+    });
+</script>
