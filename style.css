@@ -1,9 +1,11 @@
-
+@media screen and (min-device-width: 1099px) {
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: #333;
+   
+        background: #333;
+    
   /*  background: #2e2d2d; */
     color: #fff;
 }
@@ -308,6 +310,8 @@ form button:hover {
     max-width: 90%;
     max-height: 90%;
     border-radius: 10px;
+}
+
 }
 
 /* ==============   LAPTOP   ========================= */
@@ -616,7 +620,7 @@ form button:hover {
 
         .swiper-slide {
             text-align: center;
-            background: #1e1e1e;
+            background-image: linear-gradient(to top, rgba(70, 108, 151, 0.89), rgba(34, 32, 32, 0.968));
             padding: 35px;
             border-radius: 10px;
             flex-shrink: 0;
@@ -674,6 +678,8 @@ form button:hover {
 /*--------- Media LAPTOP --------------- */
 
 @media screen and (min-device-width: 769px) and (max-device-width:900px){
+  
+
     .home {
         flex-direction: column; /* Change from row to column */
         text-align: center;
