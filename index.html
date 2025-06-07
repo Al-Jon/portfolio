@@ -49,25 +49,33 @@
                     <h3>What's AP!</h3>
                     <p>An educational mobile audiobook for Araling Panlipunan lessons</p>
                 </div>
+
                 <div class="swiper-slide item">
                     <img src="quote.png" alt="Work 2" class="work-img">
                     <h3>Quote Randomizer</h3>
                     <p>A simple web application for picking a random quote</p>
                 </div>
+
                 <div class="swiper-slide item">
-                    <img src="todo.png" alt="Work 3" class="work-img">
+                    <img src="figma.jpeg" alt="Work 3" class="work-img">
+                    <h3>Home Automation UI/UX Design</h3>
+                    <p>Responsive Designs using Figma for Home Automation Case Study</p>
+                </div>
+                
+                <div class="swiper-slide item">
+                    <img src="todo.png" alt="Work 4" class="work-img">
                     <h3>To-do List App</h3>
                     <p>A simple to-do list app to organize your tasks and get job well done</p>
                 </div>
 
                 <div class="swiper-slide item">
-                    <img src="val.png" alt="Work 3" class="work-img">
+                    <img src="val.png" alt="Work 5" class="work-img">
                     <h3>Cute Valentine's Day Card</h3>
                     <p>A cute valentine's day card to ask the person you adore -- sweet!</p>
                 </div>
 
                 <div class="swiper-slide item">
-                    <img src="canva.png" alt="Work 1" class="work-img">
+                    <img src="canva.png" alt="Work 6" class="work-img">
                     <h3>EduLearn</h3>
                     <p>A UI Design for online learning platform made with Canva</p>
                 </div>
@@ -80,11 +88,19 @@
                     <h3>What's AP!</h3>
                     <p>An educational mobile audiobook for Araling Panlipunan lessons</p>
                 </div>
+
                 <div class="swiper-slide item">
                     <img src="quote.png" alt="Work 2" class="work-img">
                     <h3>Quote Randomizer</h3>
                     <p>A simple web application for picking a random quote</p>
                 </div>
+
+                <div class="swiper-slide item">
+                    <img src="figma.jpeg" alt="Work 3" class="work-img">
+                    <h3>Home Automation UI/UX Design</h3>
+                    <p>Responsive Designs using Figma for Home Automation Case Study</p>
+                </div>
+                
                 <div class="swiper-slide item">
                     <img src="todo.png" alt="Work 3" class="work-img">
                     <h3>To-do List App</h3>
@@ -152,21 +168,34 @@
 
     <script>
        document.addEventListener("DOMContentLoaded", function () {
-            const swiper = new Swiper(".swiper-container", {
-        loop: true,
-        autoplay: {
-            delay: 3000,
-            disableOnInteraction: false,
-        },
-        slidesPerView: 3, // Automatically fit slides
-        spaceBetween: 20, 
-        centeredSlides: true, // Ensures the center slide is always in the middle
-        initialSlide: 1, // Start with the second slide centered
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
+        const swiper = new Swiper(".swiper-container", {
+    loop: false, // or true if you want infinite looping
+    slidesPerView: "auto",
+    centeredSlides: true,
+    spaceBetween: 20,
+    grabCursor: true,
+
+    autoplay: {
+        delay: 3000, // 3 seconds between slides
+        disableOnInteraction: false // keep autoplay after dragging
     },
+
+    on: {
+        slideChangeTransitionEnd: () => {
+            document
+                .querySelectorAll('.swiper-slide')
+                .forEach((slide) => slide.classList.remove('swiper-slide-active'));
+
+            const activeSlide = swiper.slides[swiper.activeIndex];
+            if (activeSlide) {
+                activeSlide.classList.add('swiper-slide-active');
+            }
+        }
+    }
 });
+
+
+
 
     // Enlarge image on click
     document.querySelectorAll(".work-img").forEach((img) => {
